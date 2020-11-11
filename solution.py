@@ -143,7 +143,7 @@ def ping(host, timeout=1):
             print('---{} ping statistics---'.format(host))
             print('{} packets transmitted, {} packets received, {:.1f}% packet loss'.format(i, packet_count, 100 - packet_count * 100 / i))
             print('round-trip min/avg/max/stddev = {:.1f}/{:.1f}/{:.1f}/{:.1f} ms'.format(packet_min, packet_avg, packet_max, stddev))
-    vars = [str(round(packet_min, 2)), str(round(packet_avg, 2)), str(round(packet_max, 2)),str(round(stdev(packet_array), 2))]
+    vars = [str(round(packet_min, 2)), str(round(packet_avg, 2)), str(round(packet_max, 2)),str(round(statistics.stdev(packet_array), 2))]
     return vars
 
 if __name__ == '__main__':
